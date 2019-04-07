@@ -15,7 +15,7 @@ public class Race {
     }
 
     public RaceResults getRaceResults() {
-        if (race == null) {
+        if (race == null || race.isEmpty()) {
             throw new IllegalArgumentException("Race not provided");
         }
 

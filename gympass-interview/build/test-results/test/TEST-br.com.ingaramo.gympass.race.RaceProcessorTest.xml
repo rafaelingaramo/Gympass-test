@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.ingaramo.gympass.race.RaceProcessorTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2019-04-07T17:47:15" hostname="lnxcit017514" time="0.064">
+  <properties/>
+  <testcase name="processRaceFromFileSingleLineFile" classname="br.com.ingaramo.gympass.race.RaceProcessorTest" time="0.051"/>
+  <testcase name="processRaceFromFileHeaderOnlyFile" classname="br.com.ingaramo.gympass.race.RaceProcessorTest" time="0.0"/>
+  <testcase name="processRaceFromFileEmptyFile" classname="br.com.ingaramo.gympass.race.RaceProcessorTest" time="0.001"/>
+  <testcase name="processRaceFromFileMultiLineFile" classname="br.com.ingaramo.gympass.race.RaceProcessorTest" time="0.01"/>
+  <testcase name="processRaceFromFileNullFile" classname="br.com.ingaramo.gympass.race.RaceProcessorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

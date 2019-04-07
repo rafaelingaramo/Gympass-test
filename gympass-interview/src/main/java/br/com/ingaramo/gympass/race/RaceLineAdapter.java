@@ -10,7 +10,7 @@ import java.text.ParseException;
 import java.time.LocalTime;
 import java.util.List;
 
-class RaceLineAdapter {
+public class RaceLineAdapter {
     private static final String HOUR_FORMAT = "HH:mm:ss.SSS";
     private static final String HOUR = "00:0";
     private static final String NUMBER_FORMAT = "##,000";
@@ -25,7 +25,7 @@ class RaceLineAdapter {
         DECIMAL_FORMAT.setParseBigDecimal(true);
     }
 
-    RaceLap adaptRaceLapFromLine(final List<String> line) {
+    public RaceLap adaptRaceLapFromLine(final List<String> line) {
         if (line == null || line.size() != 5) {
             throw new IllegalArgumentException("Wrong line provided to adapter");
         }
