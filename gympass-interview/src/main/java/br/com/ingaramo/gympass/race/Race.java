@@ -4,29 +4,25 @@ import java.util.List;
 import java.util.Objects;
 
 public class Race {
-    private List<RaceLap> race;
+    private List<RaceLap> raceLaps;
 
-    public List<RaceLap> getRace() {
-        return race;
-    }
-
-    public void setRace(List<RaceLap> race) {
-        this.race = race;
+    public List<RaceLap> getRaceLaps() {
+        return raceLaps;
     }
 
     public RaceResults getRaceResults() {
-        if (race == null || race.isEmpty()) {
+        if (raceLaps == null || raceLaps.isEmpty()) {
             throw new IllegalArgumentException("Race not provided");
         }
 
-        return new RaceAnalyzer().analyze(race);
+        return new RaceAnalyzer().analyze(raceLaps);
     }
 
-    public Race(List<RaceLap> race) {
-        this.race = race;
+    Race(List<RaceLap> race) {
+        this.raceLaps = race;
     }
 
-    public Race() {
+    Race() {
     }
 
     @Override
@@ -34,18 +30,18 @@ public class Race {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Race race1 = (Race) o;
-        return Objects.equals(race, race1.race);
+        return Objects.equals(raceLaps, race1.raceLaps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(race);
+        return Objects.hash(raceLaps);
     }
 
     @Override
     public String toString() {
         return "Race{" +
-            "race=" + race +
+            "raceLaps=" + raceLaps +
             '}';
     }
 }

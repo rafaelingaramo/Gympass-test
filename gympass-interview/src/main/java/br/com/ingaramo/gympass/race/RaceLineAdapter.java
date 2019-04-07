@@ -39,7 +39,7 @@ public class RaceLineAdapter {
         try {
             avgLapTime = (BigDecimal) DECIMAL_FORMAT.parse(line.get(4));
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            throw new RaceLapAdapterException(e);
         }
 
         RaceLap raceLap = new RaceLap();

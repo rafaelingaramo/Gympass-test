@@ -33,7 +33,7 @@ public class FileReaderTest {
         final FileReader reader = new FileReader();
         final List<String> lines = reader.readFile("src/test/resources/single.log");
 
-        Assert.assertEquals(lines.size(), 1);
+        Assert.assertEquals(1, lines.size());
     }
 
     @Test
@@ -41,6 +41,6 @@ public class FileReaderTest {
         final FileReader reader = new FileReader();
         final List<String> lines = reader.readFile("src/test/resources/multiple.log");
 
-        Assert.assertEquals(lines.size(), 8);
+        Assert.assertEquals(8, lines.size());
     }
 }

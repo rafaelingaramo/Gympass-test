@@ -13,8 +13,8 @@ public class PilotTest {
     public void testPilotCreationWithOkString() {
         final String composed = "033 – K.RAIKONNEN";
         final Pilot pilot = new Pilot(composed);
-        Assert.assertEquals(pilot.getName(), "K.RAIKONNEN");
-        Assert.assertEquals(pilot.getCode(), new Integer(33));
-        Assert.assertEquals(pilot.getComposedCode(), composed);
+        Assert.assertEquals("K.RAIKONNEN", pilot.getName());
+        Assert.assertEquals(new Integer(33), pilot.getCode());
+        Assert.assertEquals(composed, pilot.getComposedCode());
     }
 }

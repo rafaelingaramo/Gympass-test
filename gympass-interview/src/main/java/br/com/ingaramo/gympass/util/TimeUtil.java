@@ -4,6 +4,10 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class TimeUtil {
+    private TimeUtil() {
+
+    }
+
     public static LocalTime toTime(final String time, final String pattern) {
         return LocalTime.parse(time, DateTimeFormatter.ofPattern(pattern));
     }

@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 class RaceAnalyzer {
     private static final Integer LAST_LAP = 4;
 
-    public RaceResults analyze(final List<RaceLap> laps) {
+    RaceResults analyze(final List<RaceLap> laps) {
         final Set<RaceLap> finishLaps = getFinishLaps(laps);
         final Set<RaceLap> raceLaps = filterSamePilotLapsByMaxLap(finishLaps);
         final AtomicInteger position = new AtomicInteger(0);
@@ -35,8 +35,8 @@ class RaceAnalyzer {
     private LocalTime getTotalRaceTimeForPilot(final Pilot pilot, final List<RaceLap> laps) {
         return laps.stream()
             .filter(lap -> lap.getPilot().equals(pilot))
-            .map(lap -> lap.getLapTime())
-            .reduce(LocalTime.MIN, (last, next) -> TimeUtil.plusTime(last, next));
+            .map(RaceLap::getLapTime)
+            .reduce(LocalTime.MIN, TimeUtil::plusTime);
     }
 
     private Set<RaceLap> filterSamePilotLapsByMaxLap(final Set<RaceLap> finishLaps) {
@@ -72,19 +72,11 @@ class RaceAnalyzer {
                 continue;
             }
 
-            if (raceFinished.get() == false && LAST_LAP.equals(lap.getLap())) {
+            if (!raceFinished.get() && LAST_LAP.equals(lap.getLap())) {
                 raceFinished.set(true);
                 finishLaps.add(lap);
-                continue;
             }
         }
         return finishLaps;
-    }
-
-    private long getPilotCount(List<RaceLap> laps) {
-        return laps.stream()
-                .map(lap -> lap.getPilot())
-                .distinct()
-                .count();
     }
 }

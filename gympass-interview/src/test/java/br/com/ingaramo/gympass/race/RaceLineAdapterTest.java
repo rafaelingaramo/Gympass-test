@@ -13,7 +13,7 @@ public class RaceLineAdapterTest {
                 Arrays.asList(new String[]{""})
             );
         } catch (IllegalArgumentException e) {
-            Assert.assertEquals(e.getMessage(), "Wrong line provided to adapter");
+            Assert.assertEquals("Wrong line provided to adapter", e.getMessage());
             throw e;
         }
     }
@@ -29,10 +29,10 @@ public class RaceLineAdapterTest {
             })
         );
 
-        Assert.assertEquals(raceLap.getTime().toString(), "23:49:08.277");
-        Assert.assertEquals(raceLap.getPilot().getComposedCode(), "038 – F.MASSA");
-        Assert.assertEquals(raceLap.getLap(), new Integer(1));
-        Assert.assertEquals(raceLap.getLapTime().toString(), "00:01:02.852");
-        Assert.assertEquals(raceLap.getAvgLapTime().toString(), "44.275");
+        Assert.assertEquals("23:49:08.277", raceLap.getTime().toString());
+        Assert.assertEquals("038 – F.MASSA", raceLap.getPilot().getComposedCode());
+        Assert.assertEquals(new Integer(1), raceLap.getLap());
+        Assert.assertEquals("00:01:02.852", raceLap.getLapTime().toString());
+        Assert.assertEquals("44.275", raceLap.getAvgLapTime().toString());
     }
 }

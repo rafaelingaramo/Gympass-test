@@ -24,12 +24,12 @@ public class ListItemTokenizerTest {
         final List<List<String>> tokenize = new ListItemTokenizer().tokenize(lines);
         final List<String> firstLine = tokenize.get(0);
 
-        Assert.assertEquals(tokenize.size(), 1);
-        Assert.assertEquals(firstLine.get(0), "23:49:08.277");
-        Assert.assertEquals(firstLine.get(1), "038 – F.MASSA");
-        Assert.assertEquals(firstLine.get(2), "1");
-        Assert.assertEquals(firstLine.get(3), "1:02.852");
-        Assert.assertEquals(firstLine.get(4), "44,275");
+        Assert.assertEquals(1, tokenize.size());
+        Assert.assertEquals("23:49:08.277", firstLine.get(0));
+        Assert.assertEquals("038 – F.MASSA", firstLine.get(1));
+        Assert.assertEquals("1", firstLine.get(2));
+        Assert.assertEquals("1:02.852", firstLine.get(3));
+        Assert.assertEquals("44,275", firstLine.get(4));
     }
 
     @Test
@@ -41,17 +41,17 @@ public class ListItemTokenizerTest {
         final List<String> firstLine = tokenize.get(0);
         final List<String> lastLine = tokenize.get(7);
 
-        Assert.assertEquals(tokenize.size(), 8);
-        Assert.assertEquals(firstLine.get(0), "23:49:08.277");
-        Assert.assertEquals(firstLine.get(1), "038 – F.MASSA");
-        Assert.assertEquals(firstLine.get(2), "1");
-        Assert.assertEquals(firstLine.get(3), "1:02.852");
-        Assert.assertEquals(firstLine.get(4), "44,275");
+        Assert.assertEquals(8, tokenize.size());
+        Assert.assertEquals("23:49:08.277", firstLine.get(0));
+        Assert.assertEquals("038 – F.MASSA", firstLine.get(1));
+        Assert.assertEquals("1", firstLine.get(2));
+        Assert.assertEquals("1:02.852", firstLine.get(3));
+        Assert.assertEquals("44,275", firstLine.get(4));
 
-        Assert.assertEquals(lastLine.get(0), "23:50:15.057");
-        Assert.assertEquals(lastLine.get(1), "002 – K.RAIKKONEN");
-        Assert.assertEquals(lastLine.get(2), "2");
-        Assert.assertEquals(lastLine.get(3), "1:03.982");
-        Assert.assertEquals(lastLine.get(4), "43,493");
+        Assert.assertEquals("23:50:15.057", lastLine.get(0));
+        Assert.assertEquals("002 – K.RAIKKONEN", lastLine.get(1));
+        Assert.assertEquals("2", lastLine.get(2));
+        Assert.assertEquals("1:03.982", lastLine.get(3));
+        Assert.assertEquals("43,493", lastLine.get(4));
     }
 }
