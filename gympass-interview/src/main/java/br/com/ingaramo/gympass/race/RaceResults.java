@@ -2,12 +2,10 @@ package br.com.ingaramo.gympass.race;
 
 import br.com.ingaramo.gympass.pilot.PilotResult;
 
-import java.io.InputStream;
 import java.util.List;
 
 public class RaceResults {
     private List<PilotResult> pilotResults;
-//    private RaceStatistics raceStatistics;
 
     public List<PilotResult> getPilotResults() {
         return pilotResults;
@@ -17,7 +15,7 @@ public class RaceResults {
         this.pilotResults = pilotResults;
     }
 
-    public RaceResults(List<PilotResult> pilotResults) {
+    RaceResults(List<PilotResult> pilotResults) {
         this.pilotResults = pilotResults;
     }
 
