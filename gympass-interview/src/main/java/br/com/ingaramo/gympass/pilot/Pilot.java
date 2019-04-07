@@ -3,13 +3,16 @@ package br.com.ingaramo.gympass.pilot;
 import java.util.Objects;
 
 public class Pilot {
+    private final static String SPLIT_PATTERN = "–";
     private Integer code;
     private String name;
+    private String composedCode;
 
     public Pilot(final String composedCode) {
-        final String[] split = composedCode.split("-");
+        final String[] split = composedCode.split(SPLIT_PATTERN);
         this.code = Integer.valueOf(split[0].trim());
         this.name = split[1].trim();
+        this.composedCode = composedCode;
     }
 
     public Integer getCode() {
@@ -26,6 +29,14 @@ public class Pilot {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getComposedCode() {
+        return composedCode;
+    }
+
+    public void setComposedCode(String composedCode) {
+        this.composedCode = composedCode;
     }
 
     @Override

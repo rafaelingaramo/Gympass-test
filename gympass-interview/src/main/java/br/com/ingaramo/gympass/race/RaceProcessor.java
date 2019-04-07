@@ -5,7 +5,6 @@ import br.com.ingaramo.gympass.file.ListItemTokenizer;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class RaceProcessor {
@@ -26,9 +25,9 @@ public class RaceProcessor {
         }
 
         final List<List<String>> tokenizeLines = listItemTokenizer.tokenize(lines);
-        final Set<RaceLap> raceList = tokenizeLines.stream()
+        final List<RaceLap> raceList = tokenizeLines.stream()
             .map(line -> raceLineAdapter.adaptRaceLapFromLine(line))
-            .collect(Collectors.toSet());
+            .collect(Collectors.toList());
 
         return new Race(raceList);
     }

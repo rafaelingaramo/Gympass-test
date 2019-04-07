@@ -1,20 +1,28 @@
 package br.com.ingaramo.gympass.race;
 
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 public class Race {
-    private Set<RaceLap> race;
+    private List<RaceLap> race;
 
-    public Set<RaceLap> getRace() {
+    public List<RaceLap> getRace() {
         return race;
     }
 
-    public void setRace(Set<RaceLap> race) {
+    public void setRace(List<RaceLap> race) {
         this.race = race;
     }
 
-    public Race(Set<RaceLap> race) {
+    public RaceResults getRaceResults() {
+        if (race == null) {
+            throw new IllegalArgumentException("Race not provided");
+        }
+
+        return new RaceAnalyzer().analyze(race);
+    }
+
+    public Race(List<RaceLap> race) {
         this.race = race;
     }
 

@@ -38,11 +38,4 @@ public class ListItemTokenizer {
 
         return Arrays.asList(new String[]{time, pilot, lap, lapTime, lapAvgTime});
     }
-
-    public static void main(String[] args) throws IOException {
-        final List<String> strings = new FileReader().readFile("src/main/resources/input.log");
-        final List<List<String>> tokenize = new ListItemTokenizer().tokenize(strings);
-
-        tokenize.forEach(allLines -> System.out.println(allLines));
-    }
 }

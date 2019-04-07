@@ -9,6 +9,7 @@ public class Application {
     public static void main(String[] args) throws IOException {
         final RaceProcessor processor = new RaceProcessor();
         final Race race = processor.processRaceFromFile("src/main/resources/input.log");
-        System.out.println(race);
+
+        race.getRaceResults().printOutput();
     }
 }

@@ -54,6 +54,17 @@ public class RaceLap {
     }
 
     @Override
+    public String toString() {
+        return "RaceLap{" +
+            "time=" + time +
+            ", pilot=" + pilot +
+            ", lap=" + lap +
+            ", lapTime=" + lapTime +
+            ", avgLapTime=" + avgLapTime +
+            '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -70,14 +81,4 @@ public class RaceLap {
         return Objects.hash(time, pilot, lap, lapTime, avgLapTime);
     }
 
-    @Override
-    public String toString() {
-        return "RaceLap{" +
-            "time=" + time +
-            ", pilot='" + pilot + '\'' +
-            ", lap=" + lap +
-            ", lapTime=" + lapTime +
-            ", avgLapTime=" + avgLapTime +
-            '}';
-    }
 }
